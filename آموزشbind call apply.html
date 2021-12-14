@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>با وی اس کد فایلو باز کنید</h1>
+   <script>
+       var ali = {
+           name: 'ali',
+           age: 26,
+           job: 'teacher',
+           presetation:function (style,timeOfDay,job ){
+               if (style === 'formal') {
+                   console.log(' good '+ timeOfDay +' i\'m ' + this.name + " you are " + job)
+               } else if(style === 'friendly'){
+                    console.log(' good '+timeOfDay+' i\'m ' + this.name + ' whats up ' + " you are " + job)
+               }
+           }
+       }
+
+       var hossein ={
+            name: 'hossein',
+            age: 27,
+            job: 'teacher'
+       }
+
+    //    ali.presetation('friendly', 'morning','seller')
+    //    برای قرض دادن تابع یه آبجکت به آبجکت دیگه
+    //    ali.presetation.call(hossein,'friendly','afternoon','student')
+
+    //    عین کال هست فقط آرایه ای هست ورودیاش
+    //    ali.presetation.apply(hossein,['friendly','afternoon'],'teacher')
+   
+
+    // میتونیم ورودیهای تابعو ناقص بدیم و درموقعیتی که میخواییم بقیه ورو دیهاش رو بدیم تا تابع اجرابشه BIND
+       var aliFreindly = ali.presetation.bind(ali,'friendly')
+       aliFreindly('night','programmer')
+
+
+   </script> 
+</body>
+</html>
